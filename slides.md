@@ -6,7 +6,7 @@ layout: true
 
 class: center, middle
 
-# {title}
+# GCF and Persistence
 
 Gaurav Agarwal
 
@@ -44,7 +44,7 @@ func main() {
 class: center, middle
 
 Code
-https://github.com/algogrit/presentation-template
+https://github.com/algogrit/presentation-gcf-and-persistence
 
 Slides
-https://template.slides.algogrit.com
+https://gcf-and-persistence.slides.algogrit.com
