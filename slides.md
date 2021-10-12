@@ -11,33 +11,62 @@ class: center, middle
 Gaurav Agarwal
 
 ---
-
-# Agenda
-
----
-
 class: center, middle
 
-![Me](assets/images/me.png)
-
-Software Engineer & Product Developer
-
-Director of Engineering & Founder @ https://codermana.com
-
-ex-Tarka Labs, ex-BrowserStack, ex-ThoughtWorks
+Cloud functions are stateless
 
 ---
 class: center, middle
 
-```golang
-package main
+In order to persist data, you need to store it somewhere.
 
-import "fmt"
+---
+class: center, middle
 
-func main() {
-  fmt.Println("Hello, world!")
-}
+Let's look at the various persistence options...
+
+---
+class: center, middle
+
+## Cloud SQL
+
+---
+class: center, middle
+
+Listing the instances
+
+```bash
+gcloud sql instances list
 ```
+
+---
+class: center, middle
+
+Connecting to the database
+
+```bash
+gcloud sql connect emp-demo --user=postgres --quiet
+```
+
+---
+class: center, middle
+
+### Using Public IP
+
+---
+class: center, middle
+
+*Authorized networks*: Requires IP to be whitelisted
+
+---
+class: center, middle
+
+or
+
+---
+class: center, middle
+
+`INSTANCE_CONNECTION_NAME`
 
 ---
 
