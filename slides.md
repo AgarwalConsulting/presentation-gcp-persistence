@@ -103,7 +103,7 @@ class: center, middle
 class: center, middle
 
 Code
-https://github.com/algogrit/presentation-gcf-and-persistence
+https://github.com/AgarwalConsulting/presentation-gcf-and-persistence
 
 Slides
-https://gcf-and-persistence.slides.algogrit.com
+https://gcf-and-persistence.slides.agarwalconsulting.io/
