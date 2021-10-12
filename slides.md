@@ -69,7 +69,37 @@ class: center, middle
 `INSTANCE_CONNECTION_NAME`
 
 ---
+class: center, middle
 
+*Demo*: Connecting to CloudSQL from a Go function using `database/sql`
+
+---
+class: center, middle
+
+## Spanner
+
+---
+class: center, middle
+
+Spanner is best used for massive-scale opportunities.
+
+---
+
+- 1000s of writes per second, globally
+
+- 10,000s - 100,000s of reads per second, globally.
+
+---
+class: center, middle
+
+*Demo*: Connecting to Spanner from a Java function using `com.google.cloud.google-cloud-spanner`
+
+---
+class: center, middle
+
+*Demo*: Connecting to Spanner from a Go function using `cloud.google.com/go/spanner`
+
+---
 class: center, middle
 
 Code
