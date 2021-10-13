@@ -505,6 +505,11 @@ You can run interactive and batch queries by using the:
 - BigQuery [client libraries](https://cloud.google.com/bigquery/docs/reference/libraries)
 
 ---
+class: center, middle
+
+`gcloud components install bq`
+
+---
 
 #### Reading data directly from BigQuery storage
 
@@ -548,6 +553,33 @@ Cloud Bigtable shines in the serving path and BigQuery shines in analytics.
 class: center, middle
 
 ![BigTable vs BigQuery](assets/images/cbt-vs-bq.png)
+
+---
+class: center, middle
+
+## BigQuery + Cloud Functions
+
+---
+
+Client libraries for BigQuery:
+
+- [Java Libary](https://github.com/googleapis/java-bigquery)
+
+- [Go Library](cloud.google.com/go/bigquery)
+
+- ...
+
+.content-credits[https://cloud.google.com/bigquery/docs/reference/libraries]
+
+---
+class: center, middle
+
+*Demo*: Reading from BigQuery in a Go function
+
+---
+class: center, middle
+
+*Demo*: Use case - File uploaded to GCS saved into BigQuery
 
 ---
 class: center, middle
