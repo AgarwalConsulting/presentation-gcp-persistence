@@ -156,6 +156,8 @@ class: center, middle
 
 ## Big Table
 
+.content-credits[https://cloud.google.com/bigtable/docs/overview]
+
 ---
 class: center, middle
 
@@ -173,6 +175,106 @@ A single value in each row is indexed; this value is known as the row key.
 - high read and write throughput at *low latency*
 
 - ideal data source for *MapReduce* operations
+
+---
+
+Use cases:
+
+- Time-series data, such as CPU and memory usage over time for multiple servers.
+
+- Marketing data, such as purchase histories and customer preferences.
+
+- Financial data, such as transaction histories, stock prices, and currency exchange rates.
+
+- Internet of Things data, such as usage reports from energy meters and home appliances.
+
+- Graph data, such as information about how users are connected to one another.
+
+---
+class: center, middle
+
+### Bigtable storage model
+
+---
+class: center, middle
+
+![Storage Model](assets/images/cbt-storage-model.svg)
+
+---
+
+- Bigtable stores data in massively scalable tables
+
+- each of which is a sorted key/value map
+
+- table is composed of *rows*
+
+- *columns* contain individual values for each *row*
+
+- Each *row* is indexed by a single *row key*
+
+- *columns* that are related are grouped as *column family*
+
+- *row/column* intersection can contain multiple *cells*
+
+- *cell* contains a unique timestamped version of the data
+
+---
+class: center, middle
+
+Bigtable tables are sparse
+
+---
+class: center, middle
+
+Big Table Architecture
+
+![Architecture](assets/images/bigtable-architecture.png)
+
+---
+
+- Each node in the cluster handles a subset of the requests to the cluster.
+
+- By adding nodes to a cluster, you can
+
+  - increase the number of simultaneous requests that the cluster can handle
+
+  - as well as the maximum throughput for the entire cluster
+
+- If you enable replication by adding a second cluster
+
+  - send different types of traffic to different clusters
+
+  - fail over to one cluster if the other cluster becomes unavailable.
+
+---
+
+Advantages over HBase:
+
+- Incredible scalability
+
+- Simple administration - [data durability](https://cloud.google.com/bigtable/docs/overview#durability)
+
+- Cluster resizing without downtime
+
+---
+
+### Memory and disk usage
+
+- Unused columns
+
+- Column qualifiers
+
+- *Compactions*
+
+- Mutations and deletions
+
+- Data compression
+
+  - Random data cannot be compressed as efficiently as patterned data
+
+  - Compression works best if identical values are near each other
+
+  - Compress values larger than 1 MiB before storing them in Bigtable
 
 ---
 class: center, middle
@@ -274,6 +376,178 @@ class: center, middle
 *Demo*: Connecting to BigTable from a Go function
 
 .content-credits[https://pkg.go.dev/cloud.google.com/go/bigtable]
+
+---
+class: center, middle
+
+## BigQuery
+
+.content-credits[https://cloud.google.com/bigquery/docs/introduction]
+
+---
+class: center, middle
+
+BigQuery is a fully-managed enterprise data warehouse
+
+---
+class: center, middle
+
+### BigQuery storage
+
+---
+
+- BigQuery stores data using a *columnar storage format* that is optimized for analytical queries.
+
+- provides full support for database transaction semantics (ACID)
+
+---
+
+#### Ingesting data into BigQuery storage
+
+- Batch-load data from local files or Cloud Storage using formats that include: *Avro*, *Parquet*, *ORC*, *CSV*, *JSON*, *Datastore*, and *Firestore* formats
+
+  - can be a one-time operation
+
+- Stream data with the Storage Write API
+
+  - Continually stream smaller batches of data
+
+- Generated data
+
+  - Use SQL statements to insert rows
+
+---
+class: center, middle
+
+![Storage Architecture](assets/images/bigquery-storage-architecture.png)
+
+---
+
+Features of BigQuery storage:
+
+- Managed
+
+- Durable
+
+- Encrypted
+
+- Efficient
+
+---
+
+#### Table data
+
+- [*Standard tables*](https://cloud.google.com/bigquery/docs/tables-intro) contain structured data
+
+- [*Materialized views*](https://cloud.google.com/bigquery/docs/materialized-views-intro) are precomputed views
+
+- [*Table snapshots*](https://cloud.google.com/bigquery/docs/table-snapshots-intro) are point-in-time copies of tables
+
+---
+class: center, middle
+
+[*External tables*](https://cloud.google.com/bigquery/docs/external-tables) are a special type of table, where the data resides in a data store that is external to BigQuery, such as Cloud Storage.
+
+---
+class: center, middle
+
+An external table has a table schema, just like a standard table, but the table definition points to the external data store.
+
+---
+class: center, middle
+
+BigQuery maximizes flexibility by separating the compute engine that analyzes your data from your storage choices.
+
+---
+class: center, middle
+
+You can store and analyze your data within BigQuery or use BigQuery to assess your data where it lives.
+
+---
+
+#### Optimizing tables for your data
+
+- Nested and repeated fields
+
+- Partitioning
+
+- Clustering
+
+.content-credits[https://cloud.google.com/bigquery/docs/storage_overview#optimizing_tables_for_your_data]
+
+---
+class: center, middle
+
+### Types of Queries
+
+---
+
+- [Interactive](https://cloud.google.com/bigquery/docs/running-queries#queries) queries
+
+  - query is executed as soon as possible
+
+- [Batch](https://cloud.google.com/bigquery/docs/running-queries#batch) queries
+
+  - queued up
+
+---
+
+#### Running queries
+
+You can run interactive and batch queries by using the:
+
+- Compose new query option in the Cloud Console
+
+- [`bq` command-line tool's](https://cloud.google.com/bigquery/bq-command-line-tool) `bq query` command
+
+- BigQuery [REST API](https://cloud.google.com/bigquery/docs/reference/rest) to programmatically call the jobs.query or query-type jobs.insert methods
+
+- BigQuery [client libraries](https://cloud.google.com/bigquery/docs/reference/libraries)
+
+---
+
+#### Reading data directly from BigQuery storage
+
+- Paginate through the records in a table by calling the [`tabledata.list`](https://cloud.google.com/bigquery/docs/reference/rest/v2/tabledata/list) REST API method
+
+- Export a table to Cloud Storage by running an [extract job](https://cloud.google.com/bigquery/docs/exporting-data)
+
+- Use the BigQuery [Storage Read API](https://cloud.google.com/bigquery/docs/reference/storage)
+
+---
+class: center, middle
+
+## BigTable vs BigQuery
+
+---
+class: center, middle
+
+Cloud Bigtable is a key-value store that is designed as a sparsely populated table
+
+---
+class: center, middle
+
+BigQuery supports a standard SQL dialect that is ANSI-compliant, so if you already know SQL, you are all set.
+
+---
+
+- Bigtable is a NoSQL wide-column database optimized for heavy reads and writes
+
+  - It has low latency
+
+- BigQuery is an enterprise data warehouse for large amounts of relational structured data.
+
+  - Queries can run for long times
+
+---
+class: center, middle
+
+Cloud Bigtable shines in the serving path and BigQuery shines in analytics.
+
+---
+class: center, middle
+
+![BigTable vs BigQuery](assets/images/cbt-vs-bq.png)
 
 ---
 class: center, middle
