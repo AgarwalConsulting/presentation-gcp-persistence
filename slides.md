@@ -584,6 +584,30 @@ class: center, middle
 ---
 class: center, middle
 
+## Firestore
+
+---
+class: center, middle
+
+Cloud Functions can handle events in Cloud Firestore in the same Cloud project as the function.
+
+.content-credits[https://cloud.google.com/functions/docs/calling/cloud-firestore]
+
+---
+
+Client Libraries:
+
+- [Java](https://firebase.google.com/docs/reference/admin/java/reference/com/google/firebase/package-summary)
+
+- [Go](https://pkg.go.dev/firebase.google.com/go#section-readme)
+
+- ...
+
+.content-credits[https://firebase.google.com/docs/firestore/client/libraries]
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/presentation-gcf-and-persistence
 
