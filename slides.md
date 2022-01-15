@@ -13,11 +13,6 @@ Gaurav Agarwal
 ---
 class: center, middle
 
-Cloud functions are stateless
-
----
-class: center, middle
-
 In order to persist data, you need to store it somewhere.
 
 ---
@@ -71,11 +66,6 @@ class: center, middle
 ---
 class: center, middle
 
-*Demo*: Connecting to CloudSQL from a Go function using `database/sql`
-
----
-class: center, middle
-
 ## Spanner
 
 ---
@@ -93,48 +83,6 @@ Spanner is best used for massive-scale opportunities.
 class: center, middle
 
 `gcloud spanner instances list`
-
----
-
-Client Libraries:
-
-- `com.google.cloud.google-cloud-spanner` [for Java](https://github.com/googleapis/java-spanner)
-
-- `cloud.google.com/go/spanner` [for Go](https://pkg.go.dev/cloud.google.com/go/spanner)
-
-- ...
-
-.content-credits[https://cloud.google.com/spanner/docs/reference/libraries]
-
----
-class: center, middle
-
-*Demo*: Connecting to Spanner from a Java function
-
-.content-credits[https://googleapis.dev/java/google-cloud-spanner/latest/]
-
----
-class: center, middle
-
-*Demo*: Connecting to Spanner from a Go function
-
-.content-credits[https://pkg.go.dev/cloud.google.com/go/spanner]
-
----
-class: center, middle
-
-What about `database/sql` in Go?
-
----
-class: center, middle
-
-Experimental library: Use with caution!
-
-```bash
-go get github.com/rakyll/go-sql-driver-spanner
-```
-
-.content-credits[https://github.com/rakyll/go-sql-driver-spanner]
 
 ---
 class: center, middle
@@ -361,23 +309,6 @@ cbt count test-table
 ```
 
 ---
-
-Client libraries for Big Table:
-
-- *Apache HBase* [library for Java](https://hbase.apache.org/)
-
-- [`cloud.google.com/go/bigtable`](https://pkg.go.dev/cloud.google.com/go/bigtable) for Go
-
-- ...
-
----
-class: center, middle
-
-*Demo*: Connecting to BigTable from a Go function
-
-.content-credits[https://pkg.go.dev/cloud.google.com/go/bigtable]
-
----
 class: center, middle
 
 ## BigQuery
@@ -557,53 +488,7 @@ class: center, middle
 ---
 class: center, middle
 
-## BigQuery + Cloud Functions
-
----
-
-Client libraries for BigQuery:
-
-- [Java Libary](https://github.com/googleapis/java-bigquery)
-
-- [Go Library](cloud.google.com/go/bigquery)
-
-- ...
-
-.content-credits[https://cloud.google.com/bigquery/docs/reference/libraries]
-
----
-class: center, middle
-
-*Demo*: Reading from BigQuery in a Go function
-
----
-class: center, middle
-
-*Demo*: Use case - File uploaded to GCS saved into BigQuery
-
----
-class: center, middle
-
 ## Firestore
-
----
-class: center, middle
-
-Cloud Functions can handle events in Cloud Firestore in the same Cloud project as the function.
-
-.content-credits[https://cloud.google.com/functions/docs/calling/cloud-firestore]
-
----
-
-Client Libraries:
-
-- [Java](https://firebase.google.com/docs/reference/admin/java/reference/com/google/firebase/package-summary)
-
-- [Go](https://pkg.go.dev/firebase.google.com/go#section-readme)
-
-- ...
-
-.content-credits[https://firebase.google.com/docs/firestore/client/libraries]
 
 ---
 class: center, middle
