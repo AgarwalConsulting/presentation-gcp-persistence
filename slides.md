@@ -6,7 +6,7 @@ layout: true
 
 class: center, middle
 
-# GCF and Persistence
+# GCP Persistence
 
 Gaurav Agarwal
 
@@ -609,7 +609,7 @@ Client Libraries:
 class: center, middle
 
 Code
-https://github.com/AgarwalConsulting/presentation-gcf-and-persistence
+https://github.com/AgarwalConsulting/presentation-gcp-persistence
 
 Slides
-https://gcf-and-persistence.slides.agarwalconsulting.io/
+https://gcp-persistence.slides.agarwalconsulting.io/
