@@ -493,6 +493,21 @@ class: center, middle
 ---
 class: center, middle
 
+## Other GCP Services to know
+
+---
+class: center, middle
+
+### GCP Compute engine
+
+---
+class: center, middle
+
+### Cloud Logs (formerly Stackdriver)
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/presentation-gcp-persistence
 
