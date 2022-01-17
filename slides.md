@@ -396,6 +396,22 @@ You can store and analyze your data within BigQuery or use BigQuery to assess yo
 
 ---
 
+#### External table limitations
+
+- No data consistency guarantee
+
+- Query performance may not be high
+
+- External tables are read-only for BigQuery
+
+- Cannot export data from an external table
+
+- External tables do not support clustering
+
+.content-credits[https://cloud.google.com/bigquery/docs/external-tables#external_table_limitations]
+
+---
+
 #### Optimizing tables for your data
 
 - Nested and repeated fields
