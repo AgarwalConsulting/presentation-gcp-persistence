@@ -494,7 +494,7 @@ BigQuery supports a standard SQL dialect that is ANSI-compliant, so if you alrea
 ---
 class: center, middle
 
-Cloud Bigtable shines in the serving path and BigQuery shines in analytics.
+Cloud Bigtable shines in the *serving path* and BigQuery shines in *analytics*.
 
 ---
 class: center, middle
